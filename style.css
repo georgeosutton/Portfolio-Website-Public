@@ -2,7 +2,7 @@
     --mainColor:#eaeaea;
     --secondaryColor:#fff;
 
-     --borderColor:#c1c1c1;
+    --borderColor:#c1c1c1;
 
     --mainText:black;
     --secondaryText:#4b5156;
@@ -32,6 +32,12 @@ p, li, span, label, input, textarea{
 a{
     text-decoration: none;
     color:#17a2b8;
+    font-family: 'Roboto Mono', monospace; 
+}
+
+
+a:hover{
+    text-decoration: underline;
 }
 
 ul{
@@ -87,6 +93,7 @@ h6{ font-size:16px ;}
 	 box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 }
 /* Navigation */
+
 .nav-wrapper{
     border-radius: 5px 5px 0 0;
     border-bottom: 1px solid var(--borderColor);
@@ -173,10 +180,10 @@ h6{ font-size:16px ;}
 #profile_pic{
     display: block;
     margin: 0 auto;
-     height: 200px;
-     width: 200px;
-     object-fit: cover;
-     border: 2px solid var(--borderColor);
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 2px solid var(--borderColor);
 }
 
 
@@ -198,10 +205,6 @@ h6{ font-size:16px ;}
     display: flex;
     gap:20px;
     justify-content: center;
-    flex-flow: row wrap;
-    
-    
-	
 }
 .porfolio-wrapper{
     display: flex;
@@ -215,26 +218,38 @@ h6{ font-size:16px ;}
     cursor: pointer;
     border: none;
     background-color: var(--mainColor) ;
-    
 }
 
     .thumbnail{
-        display: block;
         width: 100%;
-        height:180px;
-        object-fit: cover;
+        height: 375px;
     }
 
+    .github-icon{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 10px;
+        cursor: pointer;
+}
 
-    .project{
-        width: 320px;
-        border:1px solid var(--borderColor);
-        -webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-        -moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-        box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-    }
+.icon-wrap{
+    display: flex;
+    align-items: flex-start;
+}
 
-   
+.icon-wrap a {
+    margin: auto 0;
+}
+    
+.project{
+    width: 500px;
+    border:1px solid var(--borderColor);
+    -webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+     box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+}
+
+  
 
 .project-title{
     margin: 0;
@@ -242,14 +257,10 @@ h6{ font-size:16px ;}
 
 .project-preview{
      padding: 15px;
+     height: 150px;
 }
 
-
-
-
-
-
-
+/* Contact Section */
 
 .contact-wrapper h4{
     margin: 0px;
@@ -260,57 +271,59 @@ h6{ font-size:16px ;}
 
 
 
-
-
 /* Responsive Design */
 
 @media screen and (max-width: 1250px){
+
     .main-container{
         width:95%;
     }
 }
 
-    @media screen and (max-width: 800px){
-        .intro-wrapper{
-            grid-template-columns: 1fr;
-            grid-template-areas: 
-                'nav-wrapper'
-                'left-column'
-                'right-column'
+@media screen and (max-width: 750px){
+
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'nav-wrapper'
+            'left-column'
+            'right-column'
             ;
         }
-          .project{
-              width: 300px;
-              box-shadow: none;
-          }
-        .scroll-button{
-          margin: 0;
-        }
-        
- .porfolio-wrapper{
-     gap:0px;
- }
 
+    .project{
+        width: 300px;
+        box-shadow: none;
+        }
+
+    .thumbnail{
+        height: 225px;
+        }
+
+    .scroll-button{
+        margin: 0;
+        }   
+
+    .porfolio-wrapper{
+        gap:0px;
+        }
 
     .about-wrapper{
-        gap: 0px;
+        gap: 0px; 
+        }
 
-        
-    }
-        .right-column{
-            justify-content: center;
+    .right-column{
+        justify-content: center;
         }
     
     }
 
-
-    @media screen and (max-width: 350px){
-        .project{
-            width: auto;
-            box-shadow: none;
+@media screen and (max-width: 350px){
+    .project{
+        width: auto;
+        box-shadow: none;
         }
-
-        #preview{
-            width:auto;
+    #preview{
+        width:auto;
         }
     }
