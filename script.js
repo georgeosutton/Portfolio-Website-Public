@@ -14,15 +14,14 @@ function createProjects() {
   for (let i = 0; i < projects.length; i++) {
     projects[i].project.className = "projects";
     projects[i].indicator.className = "indicator";
-    console.log(projects[i].indicator);
     document.getElementById("indicators").appendChild(projects[i].indicator);
   }
 
   projects[0].project.innerHTML =
     '<div class="project"><img class="thumbnail" src="imgs/project-personal-portfolio.png" alt=""><div class="project-preview">' +
     '<h6 class="project-title">Personal Portfolio Site</h6><p>View the code behind this site; built using HTML, CSS and JavaScript.</p>' +
-    '<div class="icon-wrap"> <a href="https://github.com/georgeosutton/Portfolio-Website-Public">GitHub</a>' +
-    '<a href="https://github.com/georgeosutton/Portfolio-Website-Public"> <img class="github-icon"' +
+    '<div class="icon-wrap"> <a target="_blank" href="https://github.com/georgeosutton/Portfolio-Website-Public">GitHub</a>' +
+    '<a target="_blank" href="https://github.com/georgeosutton/Portfolio-Website-Public"> <img class="github-icon"' +
     ' src="imgs/GitHub-Mark-32px.png" alt="GitHub Link"></a></div></div></div>';
   projects[1].project.innerHTML =
     '<div class="project"><img class="thumbnail" src="imgs/coming-soon.jpg" alt=""><div class="project-preview">' +
