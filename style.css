@@ -12,10 +12,13 @@
   --previewShadow: #f0ead6;
 }
 
+/* Font-size 62.5% 1rem = 10px */
 html,
 body {
+  font-family: "Roboto Mono", monospace;
   padding: 0;
   margin: 0;
+  font-size: 62.5%;
 }
 
 h1,
@@ -38,12 +41,14 @@ input,
 textarea {
   --secondaryText: #4b5156;
   font-family: "Roboto Mono", monospace;
+  font-size: 1.6rem;
 }
 
 a {
   text-decoration: none;
   color: #17a2b8;
   font-family: "Roboto Mono", monospace;
+  font-size: 1.6rem;
 }
 
 a:hover {
@@ -55,22 +60,22 @@ ul {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 5.6rem;
 }
 h2 {
-  font-size: 36px;
+  font-size: 3.6rem;
 }
 h3 {
-  font-size: 28px;
+  font-size: 2.8rem;
 }
 h4 {
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 h5 {
-  font-size: 20px;
+  font-size: 2rem;
 }
 h6 {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .s1 {
@@ -94,7 +99,7 @@ h6 {
   display: grid;
   text-align: center;
   align-content: center;
-  min-height: 10em;
+  min-height: 10rem;
 }
 /* Introduction */
 
@@ -117,7 +122,7 @@ h6 {
 /* Navigation */
 
 .nav-wrapper {
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
   border-bottom: 1px solid var(--borderColor);
   grid-area: nav-wrapper;
   display: flex;
@@ -132,8 +137,8 @@ h6 {
 }
 #contact li {
   display: inline-block;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 #about-portfolio {
@@ -143,74 +148,51 @@ h6 {
 
 #about-portfolio li {
   display: inline-block;
-  margin-right: 5px;
+  margin: 0.5rem 1rem 0.5rem 0rem;
 }
 
 /* Introduction Content */
 
 .right-column {
-  display: grid;
+  display: flex;
   grid-area: right-column;
-  align-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #preview {
   width: 280px;
+
   border: 1.5px solid #17a2b8;
   background-color: var(--previewBg);
+
   padding: 15px;
-  position: relative;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 
-.corner {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  border: 1.5px solid #17a2b8;
-  background-color: #fff;
-  position: absolute;
+#preview h4 {
+  margin: 1.6rem 0px;
 }
-
-#corner-tl {
-  top: -5px;
-  left: -5px;
-}
-
-#corner-tr {
-  top: -5px;
-  right: -5px;
-}
-
-#corner-br {
-  bottom: -5px;
-  right: -5px;
-}
-
-#corner-bl {
-  bottom: -5px;
-  left: -5px;
-}
-
 .left-column {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
   grid-area: left-column;
 }
 
 .LI-profile-badge {
-  margin: auto;
   background-color: var(--previewBg);
   border: 1.5px solid #17a2b8;
+  margin: 1rem 0px;
 }
 
 /* About */
 
 .about-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr 1fr;
   padding-bottom: 50px;
   padding-top: 50px;
   gap: 100px;
@@ -314,11 +296,17 @@ h6 {
   .main-container {
     width: 95%;
   }
+
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
 }
 
 @media screen and (max-width: 750px) {
   .intro-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-areas:
       "nav-wrapper"
       "left-column"
@@ -356,7 +344,14 @@ h6 {
     width: auto;
     box-shadow: none;
   }
+
   #preview {
-    width: auto;
+    width: 180px;
+  }
+
+  .LI-profile-badge {
+    margin: auto;
+    background-color: var(--previewBg);
+    border: 1.5px solid #17a2b8;
   }
 }
