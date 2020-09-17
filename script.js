@@ -1,7 +1,7 @@
-var mqMobile = window.matchMedia("(max-width: 750px)");
-var mqTablet = window.matchMedia("(max-width: 1200px");
+let projects = [];
 
-var projects = [];
+createProjects();
+projectsView();
 
 function createProjects() {
   for (let i = 0; i < 2; i++) {
@@ -20,18 +20,20 @@ function createProjects() {
   projects[0].project.innerHTML =
     '<div class="project"><img class="thumbnail" src="imgs/project-personal-portfolio.png" alt=""><div class="project-preview">' +
     '<h6 class="project-title">Personal Portfolio Site</h6><p>View the code behind this site; built using HTML, CSS and JavaScript.</p>' +
-    '<div class="icon-wrap"> <a target="_blank" href="https://github.com/georgeosutton/Portfolio-Website-Public">GitHub</a>' +
-    '<a target="_blank" href="https://github.com/georgeosutton/Portfolio-Website-Public"> <img class="github-icon"' +
+    '<div class="icon-wrap"> <a target="_blank" rel="noreferrer noopener" href="https://github.com/georgeosutton/Portfolio-Website-Public">GitHub</a>' +
+    '<a target="_blank" rel="noreferrer noopener" href="https://github.com/georgeosutton/Portfolio-Website-Public"> <img class="github-icon"' +
     ' src="imgs/GitHub-Mark-32px.png" alt="GitHub Link"></a></div></div></div>';
   projects[1].project.innerHTML =
-    '<div class="project"><img class="thumbnail" src="imgs/coming-soon.jpg" alt=""><div class="project-preview">' +
-    '<h6 class="project-title">Coming Soon! </h6><p>Work in progress</p></div></div>';
+    '<div class="project"><img class="thumbnail" src="imgs/travelly-img.png" alt=""><div class="project-preview">' +
+    '<h6 class="project-title">Travel Website</h6><p>A website made to showcase my proficiency in HTML and CSS! </p>' +
+    '<div class="project-links"><div class="icon-wrap"><a target="_blank" rel="noreferrer noopener" href="https://github.com/georgeosutton/Portfolio-Website-Public">GitHub</a>' +
+    '<a target="_blank" rel="noreferrer noopener" href="https://github.com/georgeosutton/Travelly-Website"> <img class="github-icon"' +
+    ' src="imgs/GitHub-Mark-32px.png" alt="GitHub Link"></a></div>' +
+    '<a target="_blank" rel="noreferrer noopener" href="https://travelly-website.netlify.app/"> View Site </a>';
 }
-createProjects();
-projectsView();
 
 function projectsView() {
-  var displayed = document.querySelectorAll(".projects");
+  let displayed = document.querySelectorAll(".projects");
   displayed.forEach(function (displayed) {
     displayed.remove();
   });
@@ -40,10 +42,7 @@ function projectsView() {
   projects[0].indicator.className = "active indicator";
 }
 
-mqMobile.addListener(projectsView);
-mqTablet.addListener(projectsView);
-
-var before = document.getElementById("before");
+let before = document.getElementById("before");
 before.addEventListener("click", function () {
   projects[0].indicator.className = "indicator";
   let first = projects.shift();
@@ -51,7 +50,7 @@ before.addEventListener("click", function () {
   projectsView();
 });
 
-var next = document.getElementById("next");
+let next = document.getElementById("next");
 next.addEventListener("click", function () {
   projects[0].indicator.className = "indicator";
   let last = projects.pop();

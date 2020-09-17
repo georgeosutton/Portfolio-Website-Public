@@ -198,6 +198,15 @@ h6 {
   gap: 100px;
 }
 
+.skills {
+  margin: 0px;
+  padding: 0px;
+}
+
+.skills li {
+  margin: 1rem 0rem;
+}
+
 /* Projects */
 
 #project-wrapper {
@@ -235,8 +244,17 @@ h6 {
   align-items: flex-start;
 }
 
+.project-links a {
+  margin: auto 0px;
+}
+
 .icon-wrap a {
-  margin: auto 0;
+  margin: auto 0px;
+}
+
+.project-links {
+  display: flex;
+  gap: 20px;
 }
 
 .project {
